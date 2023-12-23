@@ -37,12 +37,14 @@ function Routing({ markers }) {
 function App() {
   const markers = [
     {
-      geocode: [17.33, 78.33],
-      popUp: 'Hello, I am miner 1',
+      geocode: [17.3334, 78.331],
+      popUp: 'miner 1',
+      quality: '30'
     },
     {
-      geocode: [17.28, 78.28],
-      popUp: 'Hello, I am miner 2',
+      geocode: [17.3328, 78.339],
+      popUp: 'Nearest good quality ore',
+      quality: '60'
     }
   ];
 
@@ -53,12 +55,11 @@ function App() {
 
   return (
     <>
-      <MapContainer center={[17.321, 78.328]} zoom={13}>
-      <TileLayer
+      <MapContainer center={[17.321, 78.328]} zoom={10}>
+        <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://tile.openstreetmap.de/{z}/{x}/{y}.png'
         />
-
 
         <MarkerClusterGroup chunkedLoading>
           {markers.map((marker, index) => (
